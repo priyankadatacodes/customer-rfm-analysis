@@ -1,4 +1,5 @@
-# **Customer RFM Segmentation (End-to-End Project)**
+# **Customer RFM Segmentation Project**
+![SQL](https://img.shields.io/badge/SQL-MySQL-orange) →![Python](https://img.shields.io/badge/Python-3.10%2B-blue)→![Power BI](https://img.shields.io/badge/BI-Power%20BI-yellow)
 
 This project showcases an end-to-end Customer RFM Segmentation and CLV analysis project built using SQL (MySQL), Python (Pandas, SQLAlchemy), and Power BI. The complete workflow demonstrates real data analyst responsibilities, including data ingestion, cleaning, modeling, SQL-based segmentation, CLV enrichment, and analytical reporting.
 
