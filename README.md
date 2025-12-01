@@ -45,7 +45,9 @@ SQL → Python → SQL → Python → Power BI
 
 ---
 
-## **Project Implementation (Based on Actual Files)**
+## **Project Implementation**
+
+**Dataset Link:** https://www.kaggle.com/datasets/rajneesh231/retail-insights-a-comprehensive-sales-dataset
 
 ### **1. SQL: Database & Table**
 **File:** `01_rfm_database_and_table_creation.sql`  
