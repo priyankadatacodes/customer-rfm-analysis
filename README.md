@@ -3,7 +3,8 @@
 
 This project showcases an end-to-end Customer RFM Segmentation and CLV analysis project built using SQL (MySQL), Python (Pandas, SQLAlchemy), and Power BI. The complete workflow demonstrates real data analyst responsibilities, including data ingestion, cleaning, modeling, SQL-based segmentation, CLV enrichment, and analytical reporting.
 
-<img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/blob/main/assets/workflow%20diagram.png" width="100%">
+<img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/main/workflowdiagram.png" width="100%">
+
 
 ---
 
