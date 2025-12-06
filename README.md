@@ -145,8 +145,7 @@ This final dataset is used for BI reporting.
 
 ## **Dashboard**
 
-<img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/main/dashboard/rfm_analysis_dashboard.png
-" width="100%">
+<img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/main/dashboard/rfm_analysis_dashboard.png" width="100%">
 
 This interactive Power BI dashboard provides a complete view of customer behavior using Recency, Frequency, Monetary (RFM) segmentation combined with Customer Lifetime Value (CLV) insights.
 It helps identify high-value customers, loyal segments, potential growth groups, and customers at churn risk.
