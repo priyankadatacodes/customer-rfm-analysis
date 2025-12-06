@@ -143,15 +143,33 @@ This final dataset is used for BI reporting.
 
 ---
 
+## **Dashboard**
+<img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/main/dashboard/rfm_analysis_dashboard.png
+" width="100%">
+
+This interactive Power BI dashboard provides a complete view of customer behavior using Recency, Frequency, Monetary (RFM) segmentation combined with Customer Lifetime Value (CLV) insights.
+It helps identify high-value customers, loyal segments, potential growth groups, and customers at churn risk.
+
 ## **Key Insights Delivered**
 
-- Champions and Loyal segments contribute the highest monetary share  
-- Lost customers show long inactivity windows  
-- Potential customers are suitable for upselling  
-- CLV reveals top revenue generators  
-- RFM segmentation enables selective discounting instead of blanket offers  
-
+- High-value segments (Champions + Loyal) drive most revenue
+- Lost customers form the largest portion but contribute very little
+- Potential customers show high CLV — ideal for growth campaigns
+- At-risk customers identified early for retention strategies
+- Heatmap clearly shows customer activity and spending behavior
 These insights support informed retention, targeting, and marketing budgets.
+
+---
+
+## **Recommendation**
+
+- **Champions:** Retain with exclusive perks and minimal discounts.  
+- **Loyal Customers:** Strengthen relationships through cross-sell and rewards.  
+- **Potential Customers:** Convert with welcome offers and guided onboarding.  
+- **At Risk:** Recover via reactivation discounts and win-back campaigns.  
+- **Needs Attention:** Encourage repeat purchases with light incentives.  
+- **Lost Customers:** Use low-cost broad outreach; avoid heavy marketing spend.  
+- **Overall:** Focus budget on high-value segments and monitor RFM monthly.
 
 ---
 
