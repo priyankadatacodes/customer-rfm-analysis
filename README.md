@@ -1,7 +1,11 @@
 # **Customer RFM Segmentation Project**
 ![SQL](https://img.shields.io/badge/SQL-MySQL-orange) →![Python](https://img.shields.io/badge/Python-3.10%2B-blue)→![Power BI](https://img.shields.io/badge/BI-Power%20BI-yellow)
 
-This project showcases an end-to-end Customer RFM Segmentation and CLV analysis project built using SQL (MySQL), Python (Pandas, SQLAlchemy), and Power BI. The complete workflow demonstrates real data analyst responsibilities, including data ingestion, cleaning, modeling, SQL-based segmentation, CLV enrichment, and analytical reporting.
+**Project Overview**
+This project performs end-to-end customer segmentation using the RFM (Recency, Frequency, Monetary) framework combined with Customer Lifetime Value (CLV) analytics.
+The objective is to identify high-value customers, loyal buyers, potential growth segments, at-risk customers, and churned customers.
+
+This is a complete SQL → Python → SQL → Python → Power BI analytics pipeline, similar to real-world workflows used in e-commerce and retail companies.
 
 <img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/main/workflowdiagram.png" width="100%">
 
@@ -10,16 +14,13 @@ This project showcases an end-to-end Customer RFM Segmentation and CLV analysis 
 
 ## **Business Problem**
 
-The business treats all customers uniformly without understanding their value contribution, purchase frequency, or monetary potential. As a result, marketing investments are inefficient, retention efforts are misaligned, and dormant customers remain unidentified.
+The business was treating all customers uniformly without knowing:
+- Which customers generate the most revenue
+- Who buys frequently vs. occasionally
+- Which customers are at risk of churn
+- Which segments justify higher marketing investment
 
-To resolve this, the company requires a segmentation model that classifies customers based on their purchasing behavior and revenue patterns. RFM-based segmentation combined with CLV analytics helps detect:
-- high-value customers,
-- loyal repeat buyers,
-- potential growth candidates,
-- at-risk customers,
-- lost or inactive customers.
-
-The outcome enables targeted campaigns, optimized discount strategies, revenue forecasting, and improved decision-making.
+This led to inefficient marketing spend, poor retention, and revenue loss.
 
 ---
 
@@ -35,113 +36,39 @@ The outcome enables targeted campaigns, optimized discount strategies, revenue f
 
 ## **End-to-End Workflow**
 
-SQL → Python → SQL → Python → Power BI
-
-1. Database setup and raw table schema  
-2. Raw data import, cleaning, transformation and creation of final table  
-3. SQL-based RFM metric calculation and customer segmentation  
-4. Python-based CLV computation and final enriched dataset  
-5. Power BI dashboard for business insights  
-
----
-
-## **Project Implementation**
-
 **Dataset Link:** https://www.kaggle.com/datasets/rajneesh231/retail-insights-a-comprehensive-sales-dataset
 
-### **1. SQL: Database & Table**
-**File:** `01_rfm_database_and_table_creation.sql`  
-Tasks performed:
-- Created database `rfm_project`
-- Designed `orders_raw` schema for raw data  
 
-This sets the foundation for transactional storage and subsequent processing.
+SQL → Python → SQL → Python → Power BI
 
----
+1. SQL — Raw Table Setup
+Create transactional tables
+Validate raw data format
+Prepare data for preprocessing
 
-### **2. Python: Data Load, Cleaning & Final Table Creation**
-**File:** `02_python_cleaning.ipynb`  
-Operations performed:
-- Loaded CSV into pandas  
-- Checked datatypes and nulls  
-- Removed missing CustomerIDs  
-- Converted CustomerID to numeric  
-- Filled missing product descriptions  
-- Removed negative quantity and unit price rows  
-- Created `TotalPrice` column  
-- Push cleaned data into MySQL table `orders_clean`
+2. Python — Data Cleaning and Export
+Remove duplicates
+Handle missing values
+Fix date formats
+Export cleaned data back into SQL
 
-This ensures a reliable and analysis-ready dataset.
+3. SQL — RFM Calculation and Segmentation
+Calculate Recency, Frequency, Monetary metrics
+Assign quantile-based scores (1–5)
+Create customer segments
 
----
+4. Python — CLV Modeling and Final Dataset Creation
+Import RFM output
+Compute Customer Lifetime Value
+Merge and enrich customer segmentation dataset
+Export final dataset for BI
 
-### **3. SQL: RFM Metrics & Segmentation**
-**File:** `03_rfm_modeling.sql`  
-RFM Logic Implemented:
-- Recency (days since last purchase)  
-- Frequency (unique invoices)  
-- Monetary (total spend)  
-- NTILE(5) scoring for R, F, M metrics  
-- Final RFM score (concatenated code)  
-- Segment assignment:
-  - Champions
-  - Loyal Customers
-  - Potential
-  - At Risk
-  - Lost
-  - Needs Attention
+5. Power BI — Dashboard Development
+Build RFM dashboard
+Create CLV comparison visuals
+Add insight-based KPIs and segment summaries
 
-Tables generated:
-- `rfm_table`
-- `rfm_scores`
-- `rfm_final`
-
-This step performs complete segmentation using pure SQL logic.
-
----
-
-### **4. Python: Final Fetch, CLV Features & Export**
-**File:** `04_rfm_analysis.ipynb`  
-Key enrichments:
-- Active customer months  
-- Purchases per month  
-- Average order value  
-- 12-month CLV projection  
-- Final merged dataset export (`final_rfm_output.csv`)
-
-This enhances segmentation with value-based business indicators.
-
----
-
-### **5. Power BI: Dashboard**
-BI visuals built on the enriched dataset:
-- RFM segment distribution  
-- Revenue share by segment  
-- CLV projections  
-- Frequency & monetary patterns  
-
-Supports strategic decisions on retention and customer targeting.
-
----
-
-## **Final Output Dataset**
-
-Output File:
-`final_rfm_output.csv`
-
-Includes:
-- RFM metrics  
-- R, F, M scores  
-- Final RFM code  
-- Customer segment  
-- Active months  
-- Monthly buying frequency  
-- Average order value  
-- CLV (12 months)
-
-This final dataset is used for BI reporting.
-
----
+**Dataset Link:** https://www.kaggle.com/datasets/rajneesh231/retail-insights-a-comprehensive-sales-dataset
 
 ## **Dashboard**
 
@@ -152,24 +79,42 @@ It helps identify high-value customers, loyal segments, potential growth groups,
 
 ## **Key Insights Delivered**
 
-- High-value segments (Champions + Loyal) drive most revenue
-- Lost customers form the largest portion but contribute very little
-- Potential customers show high CLV — ideal for growth campaigns
-- At-risk customers identified early for retention strategies
-- Heatmap clearly shows customer activity and spending behavior
-These insights support informed retention, targeting, and marketing budgets.
+1. Customer segments behave very differently
+Champions and Loyal customers generate most revenue
+Lost customers form a large portion but contribute very little
+Potential customers show high future value
+
+2. Recency trends indicate retention challenges
+Many customers have not purchased recently
+At-risk customers require immediate attention
+
+3. Frequency reveals loyalty patterns
+Loyal customers buy more frequently
+Lost customers show minimal repeat behavior
+
+4. Monetary and CLV highlight profitability
+Potential customers have high CLV
+Lost customers are not profitable to target heavily
 
 ---
 
 ## **Recommendation**
 
-- **Champions:** Retain with exclusive perks and minimal discounts.  
-- **Loyal Customers:** Strengthen relationships through cross-sell and rewards.  
-- **Potential Customers:** Convert with welcome offers and guided onboarding.  
-- **At Risk:** Recover via reactivation discounts and win-back campaigns.  
-- **Needs Attention:** Encourage repeat purchases with light incentives.  
-- **Lost Customers:** Use low-cost broad outreach; avoid heavy marketing spend.  
-- **Overall:** Focus budget on high-value segments and monitor RFM monthly.
+Champions: Retain with exclusive value offers.  
+Loyal: Strengthen through rewards and cross-sell.  
+Potential: Convert with onboarding and targeted offers.  
+At Risk: Recover with win-back strategies.  
+Needs Attention: Encourage repeat purchases with incentives.  
+Lost: Low-cost outreach only; avoid high marketing spend.  
+Overall: Focus marketing budget on high-value segments.
+
+---
+## **Tech Stack**
+
+Python (pandas, numpy, matplotlib, seaborn)
+SQL (segmentation, scoring, aggregation)
+Power BI (dashboard creation)
+Jupyter Notebook for EDA and modeling
 
 ---
 
@@ -190,6 +135,7 @@ The output enables the business to identify high-value segments, reduce churn ri
 
 
 ## **Author**
-By Priyanka Lakra
-
+Priyanka Lakra
+Aspring Data Analyst | SQL | Python | Power BI
+Focused on solving business problems using analytics.
 
