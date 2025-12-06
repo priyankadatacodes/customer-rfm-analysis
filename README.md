@@ -144,6 +144,7 @@ This final dataset is used for BI reporting.
 ---
 
 ## **Dashboard**
+
 <img src="https://raw.githubusercontent.com/priyankadatacodes/customer-rfm-analysis/main/dashboard/rfm_analysis_dashboard.png
 " width="100%">
 
